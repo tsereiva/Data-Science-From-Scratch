@@ -24,3 +24,16 @@ for i, j in friendship_pairs:
 
 print(friendships) #Viewing structure of dictionary
 
+def number_of_friends(user):
+    """How many friends does _user_ have?"""
+    user_id = user["id"]
+    friend_ids = friendships[user_id]
+    return len(friend_ids)
+
+total_connections = sum(number_of_friends(user)
+                        for user in users)
+
+num_users = len(users)
+avg_connections = total_connections / num_users
+
+print(avg_connections)
