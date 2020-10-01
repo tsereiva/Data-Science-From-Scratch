@@ -37,3 +37,13 @@ num_users = len(users)
 avg_connections = total_connections / num_users
 
 print(avg_connections)
+
+# Create a list (user_id, number_of_friends).
+num_friends_by_id = [(user["id"], number_of_friends(user))
+                     for user in users]
+
+num_friends_by_id.sort(                                # Sort the list
+       key=lambda id_and_friends: id_and_friends[1],   # by num_friends
+       reverse=True)                                   # largest to smallest
+
+print(num_friends_by_id) #Visualized new sorted list
